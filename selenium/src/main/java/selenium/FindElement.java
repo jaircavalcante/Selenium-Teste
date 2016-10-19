@@ -22,13 +22,20 @@ public class FindElement {
 	
 	@Before
 	public void setUp(){
+		
+		final String url = "E:\\Library\\chromedriver_win32\\chromedriver.exe";
+		
 		System.setProperty("webdriver.chrome.driver", 
-				new File("E:\\Library\\chromedriver_win32\\chromedriver.exe").getAbsolutePath());
+				new File(url).getAbsolutePath());
 		driver = new ChromeDriver();
 		driver.get("http://www.globo.com");
 		driver.manage().window().maximize();
 	}
 
+	/*
+	 * Search element by ID
+	 */
+	
 	@Test
 	public void findElement(){
 		WebElement element = driver.findElement(By.id("user-bar"));
